@@ -24,5 +24,24 @@ namespace AppToGeneratingImages
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Об авторе!!!");
+        }
+
+        private void BtnUp_Click(object sender, RoutedEventArgs e)
+        {
+            int number = Int32.Parse(numericUpDownTextBox.Text);
+            number++;
+            numericUpDownTextBox.Text = number.ToString();
+        }
+
+        private void BtnDown_Click(object sender, RoutedEventArgs e)
+        {
+            int number = Int32.Parse(numericUpDownTextBox.Text);
+            number--;
+            numericUpDownTextBox.Text = number.ToString();
+        }
     }
 }

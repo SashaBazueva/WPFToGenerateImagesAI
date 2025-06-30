@@ -1,13 +1,45 @@
 ﻿<Window x:Class="AppToGeneratingImages.MainWindow"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppToGeneratingImages"
         mc:Ignorable="d"
-        Title="Генерация изображений с ИИ" Height="780" Width="1080" Cursor="Arrow" Background="#FFF0BABA" WindowStartupLocation="CenterScreen">
-    <Grid>
-        
+        Title="Генерация изображений с ИИ" Height="780" Width="1080" Cursor="Arrow" WindowStartupLocation="CenterScreen">
+    <Grid Cursor="Arrow">
+        <Menu Height="25" VerticalAlignment="Top" Cursor="Arrow">
+            <MenuItem Header="File" >
+                <MenuItem Header="New Project" ></MenuItem>
+                <MenuItem Header="Open Project">
+                    <MenuItem Header="WinForms"></MenuItem>
+                    <MenuItem Header="WPF" ></MenuItem>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="О программе" Click="MenuItem_Click"/>
+        </Menu>
+        <TextBox HorizontalAlignment="Left" Margin="30,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="561" Height="120" Text="Введите промпт здесь..." FontSize="14"/>
+        <Label Content="Введите промпт:" HorizontalAlignment="Left" Margin="25,50,0,0" VerticalAlignment="Top" ContentStringFormat="" Cursor="Arrow" FontSize="14"/>
+        <StackPanel Margin="30,240,0,0" HorizontalAlignment="Left" Width="170" Height="167" VerticalAlignment="Top">
+            <CheckBox Content="Flux-pro" FontSize="16"/>
+            <CheckBox Content="Stable-diffusion" FontSize="16"/>
+            <CheckBox Content="Vqgan-clip" FontSize="16"/>
+            <CheckBox Content="Midjourney" FontSize="16"/>
+            <CheckBox Content="Animegan" FontSize="16"/>
+            <CheckBox Content="Pixel-art" FontSize="16"/>
+            <CheckBox Content="Watercolor" FontSize="16"/>
+            <CheckBox Content="Oil-painting" FontSize="16"/>
+
+        </StackPanel>
+        <Label Content="Выберите модель:" HorizontalAlignment="Left" Margin="25,207,0,0" VerticalAlignment="Top" ContentStringFormat="" Cursor="Arrow" FontSize="14"/>
+        <Label Content="Введите количество изображений:" HorizontalAlignment="Left" Margin="193,207,0,0" VerticalAlignment="Top" ContentStringFormat="" Cursor="Arrow" FontSize="14"/>
+        <TextBox x:Name="numericUpDownTextBox" HorizontalAlignment="Left" Margin="431,211,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="109" TextAlignment="Right"/>
+        <Button x:Name="btnUp" Content="🔼" HorizontalAlignment="Left" Margin="546,210,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="BtnUp_Click"/>
+        <Button x:Name="btnDown" Content="🔽" HorizontalAlignment="Left" Margin="571,210,0,0" VerticalAlignment="Top" Width="20" Height="20" Click="BtnDown_Click"/>
+        <Button x:Name="btnChooseAll" Content="Выбрать все" HorizontalAlignment="Left" Margin="28,411,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnClearAll" Content="Очистить все" HorizontalAlignment="Left" Margin="109,411,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
